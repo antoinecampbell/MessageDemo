@@ -11,14 +11,10 @@
 
 @interface MessageViewController ()
 @property (nonatomic, strong) IBOutlet UITextField *messageTextField;
-@property (nonatomic, strong) IBOutlet UIButton *cancelButton;
-@property (nonatomic, strong) IBOutlet UIButton *addButton;
 @end
 
 @implementation MessageViewController
 @synthesize messageTextField = _messageTextField;
-@synthesize cancelButton = _cancelButton;
-@synthesize addButton = _addButton;
 
 -(void)viewDidLoad
 {
@@ -28,8 +24,7 @@
 
 - (IBAction)cancelPressed
 {
-	[self.presentingViewController dismissViewControllerAnimated:YES
-													  completion:nil];
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)addPressed
